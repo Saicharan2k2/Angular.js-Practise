@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myapp" ng-controller="ctrl">
+        <!-- <p> response is :: {{res}}</p> -->
+         <p>{{msg}}</p>
+    </div>
+    <script>
+        var app = angular.module('myapp',[]);
+        app.controller('ctrl',function($scope,$http){
+            $http.get("welcome.html").then(function(response){
+                $scope.res = response.data;
+            });
+        });
+        // var app = angular.module('myapp',[]);
+        // app.controller('ctrl',function($scope,$timeout){
+        //     $scope.msg = "Hello sai";
+        //     $timeout(function(){
+        //         $scope.msg = "Hello how r  u ?"
+        //     },1000);
+        // });
+
+    </script>
+</body>
+</html>
